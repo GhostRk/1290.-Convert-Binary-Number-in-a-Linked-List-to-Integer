@@ -1,0 +1,26 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int getDecimalValue(ListNode head) {
+      int sum=0;
+        // first we will add the binary digit as it is to sum 'here'
+        //moving left to right multiplying previous result by 2 then adding the current digit(this line starts after adding 1st digit to sum )
+        while(head!=null)
+        {
+            sum*=2;
+            sum+=head.val;//here
+            head=head.next;
+        }
+        
+        return sum;
+       
+    }
+}
